@@ -1,10 +1,11 @@
 from rich.console import Console
 from rich.table import Table
 import requests
+import os
 
 # connect to https://www.alphavantage.co/query API
 BASE_URL = 'https://www.alphavantage.co/query'
-KEY = 'KC7GR4DRG5HSNUEJ'
+KEY = os.getenv('ALPHA_KEY')
 
 
 def endpoint(base_url:str, key:str, symbol:str, series_func:str, **kwargs) -> dict:
